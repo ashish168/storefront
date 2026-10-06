@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-font-smoothing: antialiased; }
+  body { @apply bg-page text-body font-sans; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-moss; }
+}
+
+@layer utilities {
+  /* Colour temperature rendered as the light it describes. */
+  .kelvin-bar { background: linear-gradient(90deg, #FFB46B 0%, #FFD9A8 35%, #FFF4E6 60%, #EAF2FF 100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
