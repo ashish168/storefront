@@ -8,8 +8,10 @@ export function SignIn() {
   const navigate = useNavigate()
   const [params] = useSearchParams()
   const next = params.get('next') ?? '/'
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  // Pre-filled deliberately. Nothing is checked and nothing is transmitted, but
+  // an empty password box invites a visitor to type a real one out of habit.
+  const [email, setEmail] = useState('sarah.okafor@brightwell-architects.co.uk')
+  const [password, setPassword] = useState('demo1234')
   const [error, setError] = useState('')
 
   function submit(e: React.FormEvent) {
@@ -42,9 +44,11 @@ export function SignIn() {
       <div className="mt-6 border border-line bg-white p-4 text-sm">
         <p className="font-medium text-ink">This is a demonstration</p>
         <p className="mt-1 text-body">
-          No account is checked and nothing is sent anywhere. Any email address and any
-          password of four characters or more will sign you in.
+          The fields are filled in already — just sign in. There is no server here:
+          nothing is checked, nothing is transmitted, and what you type never leaves
+          your browser. Your cart and orders are stored on this device only.
         </p>
+        <p className="mt-2 text-body">Please don't enter a password you use elsewhere.</p>
       </div>
     </div>
   )
